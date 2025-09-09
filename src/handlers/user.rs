@@ -44,7 +44,7 @@ pub async fn create_user(
 
 pub async fn get_user(
     State(pool): State<PgPool>,
-    Path(id): Path<String>, // dùng String để test UUID parsing lỗi
+    Path(id): Path<String>, // use String to test UUID parsing error
 ) -> Result<Json<User>> {
     // Trigger Auth error for demo
     check_auth()?;
