@@ -48,8 +48,8 @@ const Login: React.FC = () => {
           label="Password"
           type="password"
           placeholder="Enter your password"
-          {...register("password")} // Đăng ký input với RHF
-          error={errors.password} // Truyền error object
+          {...register("password")}
+          error={errors.password}
         />
 
         <div className="flex items-center justify-between">

@@ -1,10 +1,10 @@
-import {type InputHTMLAttributes, forwardRef } from 'react';
-import {type FieldError } from 'react-hook-form';
+import { type InputHTMLAttributes, forwardRef } from "react";
+import { type FieldError } from "react-hook-form";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   id: string;
-  error?: FieldError | undefined; 
+  error?: FieldError | undefined;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -12,7 +12,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="mb-4">
         {label && (
-          <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor={id}
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             {label}
           </label>
         )}
@@ -20,7 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           id={id}
           ref={ref}
           className={`mt-1 block w-full px-3 py-2 border ${
-            error ? 'border-red-500' : 'border-gray-300'
+            error ? "border-red-500" : "border-gray-300"
           } rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
           {...props}
         />
@@ -30,5 +33,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = 'Input'; 
+Input.displayName = "Input";
 export default Input;
